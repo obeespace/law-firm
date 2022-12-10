@@ -2,6 +2,7 @@ import React from 'react'
 import {BsTwitter, BsLinkedin, BsInstagram} from 'react-icons/bs'
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion } from "framer-motion"
 import background from '../assets/lawBack1.jpg'
 import founder from '../assets/founder.jpg'
 import slider1 from '../assets/use1.jpg'
@@ -15,6 +16,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
    
@@ -28,7 +30,7 @@ const Home = () => {
                 
                 <p className='text-4xl mt-5 lg:text-5xl font-playfair'>Legal Insight. Business Success</p>
                 <p className='italic mt-5 font-thin text-lg text-center'>"A jury consists of twelve persons chosen to decide who has the better lawyer"</p>
-                <button className='rounded-lg py-2 px-4 bg-yellow-600 mt-9 shadow-md'>Book Consultation</button>
+                <Link to="contact"><motion.button whileTap={{scale:0.7}} className="rounded-lg py-2 px-4 bg-yellow-600 mt-9 shadow-md text-white">Book Consultation</motion.button></Link>
             </div>
         </div>
 
@@ -63,7 +65,7 @@ const Home = () => {
 
         <hr className='w-4/6 mx-auto'/>
         
-        <div className='w-5/6 mx-auto my-20'>
+        <motion.div initial ={{x:-200}} animate ={{x:0}} exit ={{x:200}} className='w-5/6 mx-auto my-20'>
             <p className='flex lg:justify-center gap-3 items-center font-semibold text-xl'>
                 <MdOutlineGavel className='text-yellow-600'/>Practice Areas <AiOutlineLine className='text-yellow-600'/>
             </p>
@@ -81,8 +83,9 @@ const Home = () => {
                 <p className='border border-yellow-600 rounded-lg shadow-md px-4 py-2'>Health Care Law</p>
             </div>
 
-            <div className='lg:text-center mt-10'><button className='rounded-lg py-2 px-4 bg-yellow-600 mt-9 shadow-md'>Free Consultancy</button></div>
-        </div>
+            <div className='lg:text-center mt-10'><Link to="contact"><motion.button whileTap={{scale:0.7}} className="rounded-lg py-2 px-4 bg-yellow-600 mt-9 shadow-md">Free Consultancy</motion.button></Link>
+            </div>
+        </motion.div>
 
         <div className='w-5/6 mx-auto py-20 text-black'>
             <p className='flex gap-3 items-center font-semibold text-xl'>
@@ -102,63 +105,63 @@ const Home = () => {
                 pagination={{ clickable: true }}
             >
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src={slider4} className='rounded-full mb-3 shadow-md h-52 w-52'/>
+                <img alt="Client review 1" src={slider4} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Justice Owanda</p>
                 <div className='flex gap-4 mt-3 text-gray-800'>
-                    <BsTwitter/>
-                    <BsLinkedin/>
-                    <BsInstagram/>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
                 </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src={slider1} className='rounded-full mb-3 shadow-md h-52 w-52'/>
+                <img alt="Client review 1" src={slider1} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Same Nmeje</p>
-                <div className='flex gap-4 mt-3'>
-                    <BsTwitter/>
-                    <BsLinkedin/>
-                    <BsInstagram/>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
                 </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src={slider1} className='rounded-full mb-3 shadow-md h-52 w-52'/>
+                <img alt="Client review 1" src={slider3} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Samantha John</p>
-                <div className='flex gap-4 mt-3'>
-                    <BsTwitter/>
-                    <BsLinkedin/>
-                    <BsInstagram/>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
                 </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src={slider1} className='rounded-full mb-3 shadow-md h-52 w-52'/>
+                <img alt="Client review 1" src={slider1} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Millamzy Ndefo</p>
-                <div className='flex gap-4 mt-3'>
-                    <BsTwitter/>
-                    <BsLinkedin/>
-                    <BsInstagram/>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
                 </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src={slider2} className='rounded-full mb-3 shadow-md h-52 w-52'/>
+                <img alt="Client review 1" src={slider2} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Winnie Sunday</p>
-                <div className='flex gap-4 mt-3'>
-                    <BsTwitter/>
-                    <BsLinkedin/>
-                    <BsInstagram/>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
                 </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src={slider3} className='rounded-full mb-3 shadow-md h-52 w-52'/>
+                <img alt="Client review 1" src={slider3} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Joy Emeka</p>
                 <div className='flex gap-4 mt-3 text-gray-800'>
-                    <BsTwitter/>
-                    <BsLinkedin/>
-                    <BsInstagram/>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
                 </div>
             </SwiperSlide>
             </Swiper>
@@ -167,38 +170,68 @@ const Home = () => {
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
-                autoplay={{ delay: 7000 }}
+                autoplay={{ delay: 5000 }}
                 pagination={{ clickable: true }}
             >
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src='' className='rounded-full mb-3 shadow-md h-14 w-14'/>
+                <img alt="Client review 1" src={slider4} className='rounded-full mb-3 shadow-md h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Justice Owanda</p>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
+                </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src='' className='rounded-full mb-3 shadow-md h-14 w-14'/>
+                <img alt="Client review 1" src={slider1} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Same Nmeje</p>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
+                </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src='' className='rounded-full mb-3 shadow-md h-14 w-14'/>
+                <img alt="Client review 1" src={slider3} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Samantha John</p>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
+                </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src='' className='rounded-full mb-3 shadow-md h-14 w-14'/>
+                <img alt="Client review 1" src={slider1} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Millamzy Ndefo</p>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
+                </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src='' className='rounded-full mb-3 shadow-md h-14 w-14'/>
+                <img alt="Client review 1" src={slider2} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Brian Azukaeme</p>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
+                </div>
             </SwiperSlide>
             <SwiperSlide className=" flex flex-col items-center py-20 px-14">
-                <img alt="Client review 1" src='' className='rounded-full mb-3 shadow-md h-14 w-14'/>
+                <img alt="Client review 1" src={slider3} className='rounded-full mb-3 shadow-md transition-all ease-in-out hover:scale-110 h-52 w-52'/>
                 <p className='text-lg border-b border-yellow-600 pb-3'>Attorney</p>
                 <p className='font-bold mt-3 text-gray-500'>Joy Emeka</p>
+                <div className='flex gap-4 mt-3 text-gray-800'>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsTwitter/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsLinkedin/></motion.p>
+                    <motion.p whileTap={{scale: 0.7}} className='cursor-pointer'><BsInstagram/></motion.p>
+                </div>
             </SwiperSlide>
             </Swiper>
         </div>
@@ -219,6 +252,7 @@ const Home = () => {
                 <p className='border border-yellow-600 rounded-lg shadow-md px-4 py-2'>Socrates International Legal Award 2018</p>
             </div>
         </div>
+        
     </div>
   )
 }

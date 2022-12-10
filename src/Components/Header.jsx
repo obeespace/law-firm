@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/logo-wig.png'
 import {Link} from "react-router-dom"
 import {GiHamburgerMenu} from 'react-icons/gi'
+import { motion } from "framer-motion"
 import {BsTwitter, BsLinkedin, BsInstagram} from 'react-icons/bs'
 import {IoMdClose} from 'react-icons/io'
 
@@ -32,11 +33,10 @@ const Header = () => {
                     <img src={logo} alt='' className='h-14' />
                     <p className='font-black text-lg'>Wigs Dont Lie <br/>Associates</p>
                 </div>
-                <div className='flex gap-14 font-semibold'>
+                <div className='flex gap-14 text-lg font-semibold'>
                     <Link to='/'><p>Home</p></Link>
                     <Link to='about'><p>About</p></Link>
-                    <p>Terms</p>
-                    <p>Contact</p>
+                    <Link to='contact'><p>Contact</p></Link>
                 </div>
             </div>
 
@@ -46,14 +46,18 @@ const Header = () => {
                     <p className='font-black text-lg'>Wigs Dont Lie <br/>Associates</p>
                 </div>
                 <div className='relative'>
-                    {toggleMenu ? <IoMdClose className='text-3xl text-yellow-600 cursor-pointer' onClick={()=> setToggleMenu(prev => !prev)}/> : 
-                    <GiHamburgerMenu className='text-3xl cursor-pointer text-yellow-600' onClick={()=> setToggleMenu(prev => !prev)}/>}
-                    
+                    {toggleMenu ? <motion.p whileTap={{scale:0.7}}><IoMdClose className='text-3xl text-yellow-600 cursor-pointer' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p> : 
+                    <motion.p whileTap={{scale:0.7}}><GiHamburgerMenu className='text-3xl cursor-pointer text-yellow-600' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p>}  
                 </div>
-                {toggleMenu && <div className='bg-gray-800 z-50 absolute h-screen w-4/6 left-0'></div>}
+                {toggleMenu && <div className='bg-slate-800 z-50 text-black min-h-full w-4/6 absolute top-0 left-0'>
+                    <div className='flex flex-col gap-14 text-lg font-semibold'>
+                        <Link to='/'><p onClick={()=> setToggleMenu(prev => !prev)}>Home</p></Link>
+                        <Link to='about'><p onClick={()=> setToggleMenu(prev => !prev)}>About</p></Link>
+                        <Link to='contact'><p onClick={()=> setToggleMenu(prev => !prev)}>Contact</p></Link>
+                    </div>
+                </div>}
             </div>
         </div>
-
     </div>
   )
 }
