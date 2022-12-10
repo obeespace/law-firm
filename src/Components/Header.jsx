@@ -1,8 +1,8 @@
 import React from 'react'
 import logo from '../assets/logo-wig.png'
 import {Link} from "react-router-dom"
+import { motion } from 'framer-motion'
 import {GiHamburgerMenu} from 'react-icons/gi'
-import { motion } from "framer-motion"
 import {BsTwitter, BsLinkedin, BsInstagram} from 'react-icons/bs'
 import {IoMdClose} from 'react-icons/io'
 
@@ -11,6 +11,8 @@ const Header = () => {
     function toggle(prev){
         setToggleMenu(true)
     }
+
+    
   return (
     <div className=''>
         <div className='bg-slate-800 text-white'>
