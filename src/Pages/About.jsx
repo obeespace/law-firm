@@ -76,7 +76,7 @@ const About = () => {
   return (
     <div className='text-lg'>
       <div className='relative'>
-        <img src={backlaw} className='w-screen h-max lg:h-96 lg:object-cover'/>
+        <img src={backlaw} className='w-screen h-80 lg:h-96 lg:object-cover'/>
         <div className='absolute flex flex-col justify-center 
         items-center top-0 right-0 left-0 
         bottom-0 text-white w-5/6 mx-auto text-center'>
