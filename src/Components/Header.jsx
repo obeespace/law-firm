@@ -51,11 +51,11 @@ const Header = () => {
                     {toggleMenu ? <motion.p whileTap={{scale:0.7}}><IoMdClose className='text-3xl text-yellow-600 cursor-pointer' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p> : 
                     <motion.p whileTap={{scale:0.7}}><GiHamburgerMenu className='text-3xl cursor-pointer text-yellow-600' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p>}  
                 </div>
-                {toggleMenu && <div className='bg-slate-800 z-50 text-black min-h-full w-4/6 absolute top-0 left-0'>
-                    <div className='flex flex-col gap-14 text-lg font-semibold'>
-                        <Link to='/'><p onClick={()=> setToggleMenu(prev => !prev)}>Home</p></Link>
-                        <Link to='about'><p onClick={()=> setToggleMenu(prev => !prev)}>About</p></Link>
-                        <Link to='contact'><p onClick={()=> setToggleMenu(prev => !prev)}>Contact</p></Link>
+                {toggleMenu && <div className='bg-white z-50 text-black min-h-full w-4/6 absolute top-0 left-0 border-b border-yellow-700 pb-2'>
+                    <div className='flex flex-col gap-10 mt-32 items-center w-1/6 mx-auto text-lg font-semibold '>
+                        <Link to='/'><p className='hover:border-b hover:border-yellow-700 pb-2' onClick={()=> setToggleMenu(prev => !prev)}>Home</p></Link>
+                        <Link to='about'><p className='hover:border-b hover:border-yellow-700 pb-2' onClick={()=> setToggleMenu(prev => !prev)}>About</p></Link>
+                        <Link to='contact'><p className='hover:border-b hover:border-yellow-700 pb-2' onClick={()=> setToggleMenu(prev => !prev)}>Contact</p></Link>
                     </div>
                 </div>}
             </div>
