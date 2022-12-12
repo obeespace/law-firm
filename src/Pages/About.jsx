@@ -84,6 +84,7 @@ const About = () => {
         </div>
       </div>
 
+      
       <div className='my-28 mx-auto w-5/6 lg:flex gap-28 items-center'>
         <div>
           <img alt='meeting' src={about1} className="lg:h-72 rounded-xl shadow-md"/>
